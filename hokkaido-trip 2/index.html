@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7F2EA">
+<title>HOKKAIDO TRAVEL｜北海道 2026.12.14 — 12.21</title>
+<meta name="description" content="北海道冬季八天七夜旅行手帳：每日行程、地圖導航、餐廳、預算、照片牆、行李清單與天氣。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+TC:wght@400;500&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23F7F2EA'/%3E%3Cpath d='M32 14v36M18 22l28 20M46 22L18 42' stroke='%236B5442' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- 頂部導覽 -->
+<header class="topbar" id="topbar">
+  <div class="wrap">
+    <a class="brand" href="#home"><b>HOKKAIDO</b><span>WINTER 2026</span></a>
+    <nav class="desk-nav" id="deskNav">
+      <a href="#home" data-v="home">首頁</a>
+      <a href="#day-1" data-v="day">每日行程</a>
+      <a href="#food" data-v="food">美食</a>
+      <a href="#budget" data-v="budget">預算</a>
+      <a href="#photos" data-v="photos">照片牆</a>
+      <a href="#checklist" data-v="checklist">清單</a>
+      <a href="#weather" data-v="weather">天氣</a>
+      <a href="#notes" data-v="notes">行前確認</a>
+      <a href="#guide" data-v="guide">使用說明</a>
+    </nav>
+    <span class="top-date">12.14 — 12.21</span>
+  </div>
+</header>
+
+<main id="app">
+  <section class="view" id="v-home"></section>
+  <section class="view" id="v-day"></section>
+  <section class="view" id="v-food"></section>
+  <section class="view" id="v-budget"></section>
+  <section class="view" id="v-photos"></section>
+  <section class="view" id="v-checklist"></section>
+  <section class="view" id="v-weather"></section>
+  <section class="view" id="v-notes"></section>
+
+  <!-- 使用說明（純文字頁，可直接在這裡修改） -->
+  <section class="view" id="v-guide">
+    <div class="wrap guide" style="max-width:780px">
+      <div class="page-title"><span class="eyebrow">How to use</span><h1>使用說明</h1><p>預覽、免費發布、以及之後怎麼自己修改。</p></div>
+
+      <h2>一、網站檔案有哪些</h2>
+      <ul>
+        <li><code>index.html</code>：網站骨架與這頁說明。</li>
+        <li><code>data.js</code>：<b>所有行程、餐廳、清單、照片設定都在這裡</b>，平常只需要改這個。</li>
+        <li><code>style.css</code>：顏色與版面。最上面 <code>:root</code> 可以換主色。</li>
+        <li><code>app.js</code>：網站功能程式，不需要修改。</li>
+      </ul>
+
+      <h2>二、在自己電腦預覽</h2>
+      <ol>
+        <li>把收到的壓縮檔解壓縮成一個資料夾。</li>
+        <li>直接雙擊 <code>index.html</code>，用 Chrome、Safari 或 Edge 開啟即可。</li>
+        <li>照片、天氣、地圖需要連網才會顯示。</li>
+      </ol>
+
+      <h2>三、免費發布成網址（Netlify Drop，最簡單）</h2>
+      <ol>
+        <li>電腦開啟 <a href="https://app.netlify.com/drop" target="_blank" rel="noopener">app.netlify.com/drop</a>。</li>
+        <li>把<b>整個網站資料夾</b>（裡面有 index.html 的那個）拖進網頁中間的框框。</li>
+        <li>幾秒後會得到一個 <code>xxxx.netlify.app</code> 的網址。</li>
+        <li><b>一小時內</b>點畫面上的「Claim」或「Sign up」免費註冊並認領網站，否則網站會被自動刪除。</li>
+        <li>認領後可在 Site configuration → Change site name 改成好記的名字，例如 <code>our-hokkaido-2026</code>。</li>
+        <li>把網址傳給男朋友，手機用 Safari／Chrome 開啟，可「加入主畫面」當成 App 使用。</li>
+      </ol>
+      <h3>之後要更新網站</h3>
+      <p>在電腦改好檔案後，到 Netlify 該網站的「Deploys」頁面，把整個資料夾再拖進去一次，網址不變、內容就更新了。</p>
+
+      <h3>備選：GitHub Pages</h3>
+      <ol>
+        <li>註冊 GitHub，按右上角「+」→ New repository，名稱隨意，選 Public。</li>
+        <li>在新倉庫頁面按「uploading an existing file」，把四個檔案拖進去，按 Commit changes。</li>
+        <li>到 Settings → Pages，Source 選 <code>Deploy from a branch</code>、Branch 選 <code>main</code>，按 Save。</li>
+        <li>約一分鐘後會出現 <code>帳號.github.io/倉庫名</code> 的網址。之後可以直接在 GitHub 網頁上點 data.js → 鉛筆圖示線上修改。</li>
+      </ol>
+
+      <h2>四、修改行程（data.js 的 DAYS）</h2>
+      <p>建議用免費的 <a href="https://code.visualstudio.com/" target="_blank" rel="noopener">VS Code</a> 開啟 data.js（記事本也可以）。每一天長這樣，每個行程點是一行 <code>{ ... }</code>：</p>
+<pre>{ time: '15:40-17:30', kind: 'food', title: '金森紅磚倉庫・幸運小丑',
+  desc: '逛店拍港景，點中華雞腿漢堡。',
+  stay: '約 1 小時',              ← 預計停留（可省略）
+  move: '飯店步行 10-15 分',       ← 交通時間（可省略）
+  addr: '函館市末廣町…',          ← 地址（可省略）
+  q: 'Lucky Pierrot Bay Area Main Store',  ← Google Maps 搜尋用名稱
+  img: 'bayArea',                 ← 照片代號（對應 PHOTOS）
+  tag: '已訂' },                  ← 標籤：已訂／待確認／備案／彈性</pre>
+      <ul>
+        <li>新增景點：複製一整行 <code>{ ... },</code> 貼在想要的位置再改內容。</li>
+        <li>刪除景點：把那一整行刪掉。</li>
+        <li>注意每個 <code>{ }</code> 後面要有逗號，文字要放在單引號 <code>' '</code> 裡；文字裡如果要用單引號，請改用「」。</li>
+        <li>改壞了網站變空白？用 Ctrl+Z 回到上一步存檔，或用原本的備份檔覆蓋。</li>
+      </ul>
+
+      <h2>五、修改照片</h2>
+      <ul>
+        <li>景點照片設定在 data.js 最上面的 <code>PHOTOS</code>。</li>
+        <li>想用自己的照片：在網站資料夾裡建一個 <code>photos</code> 資料夾放入圖片，然後寫 <code>myToya: { src: 'photos/toya.jpg', credit: '自己拍的' },</code>，再到行程點寫 <code>img: 'myToya'</code>。</li>
+        <li>Wikimedia 照片需標示作者與授權，網站已在照片右下角自動顯示，請不要刪掉。</li>
+      </ul>
+
+      <h2>六、修改餐廳（data.js 的 FOODS）</h2>
+      <p>每間餐廳一筆，營業時間 <code>hours</code>、公休 <code>closed</code>、價格 <code>price</code>、推薦 <code>dish</code>。查不到請寫 <code>待確認</code>，網站會用紅字提醒。若想放餐廳照片，可加 <code>photo: 'photos/xxx.jpg'</code>。行程點寫 <code>food: '餐廳代號'</code> 就會在行程裡顯示餐廳小卡。</p>
+
+      <h2>七、預算、清單、照片牆的資料存在哪裡</h2>
+      <ul>
+        <li>預算、清單存在<b>這支手機或這台電腦的瀏覽器</b>，重新整理不會消失；但換裝置、換瀏覽器或清除瀏覽資料就看不到。</li>
+        <li>兩人要共用同一份預算：一人在預算頁按「匯出備份」，把檔案用 LINE 傳給對方，對方按「匯入備份」即可同步。</li>
+        <li>照片牆的照片只存在上傳的那台裝置，不會上傳到網路，也不會被別人看到。想跟男友共享照片，建議另外開一本 Google 相簿共享相簿。</li>
+        <li>預算頁的匯率請到 <a href="https://rate.bot.com.tw/xrt?Lang=zh-TW" target="_blank" rel="noopener">台灣銀行牌告匯率</a> 查最新的日圓「現金賣出」再填入。</li>
+      </ul>
+
+      <h2>八、資料來源</h2>
+      <ul>
+        <li>行程、時間、價格：依你提供的 PDF 行程簡報。</li>
+        <li>餐廳營業時間與公休：以 Google Maps 為準（2026/11/17 查詢），出發前建議再看一次。</li>
+        <li>天氣：<a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a>（CC BY 4.0），警報請看日本氣象廳。</li>
+        <li>照片：Wikimedia Commons 與維基百科條目照片，作者與授權標在每張照片上。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span class="en">Hokkaido · Winter Journal</span>
+  2026.12.14 — 2026.12.21・札幌 小樽 美瑛 洞爺湖 函館
+</footer>
+
+<!-- 手機底部分頁 -->
+<nav class="tabbar" id="tabbar">
+  <a href="#home" data-v="home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>首頁</a>
+  <a href="#day-1" data-v="day"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>行程</a>
+  <a href="#food" data-v="food"><svg viewBox="0 0 24 24"><path d="M5 3v8a3 3 0 0 0 3 3v7M8 3v6M11 3v8a3 3 0 0 1-3 3M17 21V3c-2 1-3.5 4-3.5 8h3.5"/></svg>美食</a>
+  <a href="#budget" data-v="budget"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 10h18M7 15h3"/></svg>預算</a>
+  <button type="button" id="moreBtn"><svg viewBox="0 0 24 24"><circle cx="5" cy="12" r="1.3"/><circle cx="12" cy="12" r="1.3"/><circle cx="19" cy="12" r="1.3"/></svg>更多</button>
+</nav>
+<div class="sheet-bg" id="sheetBg"></div>
+<div class="sheet" id="sheet">
+  <div class="grab"></div>
+  <div class="sheet-grid">
+    <a href="#photos"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="m21 16-5-5-9 9"/></svg>照片牆</a>
+    <a href="#checklist"><svg viewBox="0 0 24 24"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg>旅行清單</a>
+    <a href="#weather"><svg viewBox="0 0 24 24"><path d="M12 3v2M12 19v2M5 12H3M21 12h-2M7 7 5.6 5.6M18.4 18.4 17 17M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></svg>天氣</a>
+    <a href="#notes"><svg viewBox="0 0 24 24"><path d="M12 9v4M12 17h.01M10.3 3.9 2.4 18a2 2 0 0 0 1.7 3h15.8a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>行前確認</a>
+    <a href="#guide"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V3H6.5A2.5 2.5 0 0 0 4 5.5z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>使用說明</a>
+    <a href="#home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 4l9 6.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>回首頁</a>
+  </div>
+</div>
+
+<!-- 照片放大 -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="x" type="button" data-lb="close" aria-label="關閉"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <button class="nav l" type="button" data-lb="prev" aria-label="上一張"><svg viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></svg></button>
+  <button class="nav r" type="button" data-lb="next" aria-label="下一張"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+  <div class="stage"><img id="lbImg" alt=""></div>
+  <div class="bar2">
+    <input id="lbCap" placeholder="寫一句照片說明…" maxlength="80">
+    <span class="btn-row">
+      <select id="lbDay" class="btn sm" aria-label="移到其他天"></select>
+      <button class="btn sm danger" type="button" data-lb="del">刪除</button>
+    </span>
+  </div>
+</div>
+
+<!-- 對話框與提示 -->
+<div class="modal-bg" id="modalBg"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
